@@ -1,0 +1,32 @@
+{
+  "name": "HiSheet",
+  "version": "0.1.0",
+  "summary": "A short description of HiSheet.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/vandat0599@gmail.com/HiSheet",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vandat0599@gmail.com": "vandat0599@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/vandat0599@gmail.com/HiSheet.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "HiSheet/Classes/**/*",
+  "resource_bundles": {
+    "HiSheet": [
+      "HiSheet/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "lottie-ios": [
+
+    ]
+  }
+}

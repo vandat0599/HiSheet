@@ -32,11 +32,13 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'HiSheet/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'HiSheet' => ['HiSheet/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'HiSheet' => ['HiSheet/Assets/*.json'],
+     'HiSheet' => ['HiSheet/Assets/*.png']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'lottie-ios'
 end

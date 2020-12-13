@@ -1,0 +1,6 @@
+framework module Pods_HiSheet_Example {
+  umbrella header "Pods-HiSheet_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

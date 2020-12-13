@@ -1,0 +1,6 @@
+framework module HiSheet {
+  umbrella header "HiSheet-umbrella.h"
+
+  export *
+  module * { export * }
+}
