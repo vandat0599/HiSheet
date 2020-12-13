@@ -8,11 +8,20 @@
 
 import UIKit
 import HiSheet
+import Lottie
 
 class ViewController: UIViewController {
 
-    lazy var popupNetworkConnection: BottomSheetVC = {
-        let view = BottomSheetVC(lottieFileName: "lottie-internet-connection", title: "You seem to be offline", description: "Check your Wi-Fi connection or cellular data and try again", leftActionTitle: "Retry", rightActionTitle: "Settings", leftAction: nil, rightAction: nil)
+    lazy var popupNetworkConnection: LottieSheetViewController = {
+        let view = LottieSheetViewController(
+            lottie: AnimationView.init(name: "lottie-internet-connection"),
+            closeImage: UIImage(named: "ic-close"),
+            title: "You seem to be offline",
+            description: "Check your Wi-Fi connection or cellular data and try again",
+            leftActionTitle: "Retry",
+            rightActionTitle: "Settings",
+            leftAction: nil,
+            rightAction: nil)
         view.modalPresentationStyle = .overFullScreen
         view.modalTransitionStyle = .crossDissolve
         return view
@@ -20,8 +29,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

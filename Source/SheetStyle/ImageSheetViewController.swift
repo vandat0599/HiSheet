@@ -1,15 +1,14 @@
 //
-//  BottomSheetVC.swift
-//  Pose Estimation
+//  ImageSheetViewController.swift
+//  HiSheet
 //
-//  Created by Đạt on 12/12/20.
-//  Copyright © 2020 Tracker. All rights reserved.
+//  Created by Đạt on 12/14/20.
 //
 
 import UIKit
 import Lottie
 
-public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
+public class ImageSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: - UI components
     private lazy var viewHolder: UIControl = {
         let view = UIControl()
@@ -24,28 +23,18 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
     
     private lazy var closeButton: UIButton = {
         let view = UIButton()
-        let bundle = Bundle(url: URL(fileURLWithPath: Bundle(for: BottomSheetVC.self).path(forResource: "HiSheet", ofType: "bundle")!))
-        view.setImage(UIImage(named: "ic-close", in: bundle, compatibleWith: nil), for: .normal)
+        view.setImage(UIImage(named: "ic-close", in: Utils.resourcesBundle, compatibleWith: nil), for: .normal)
         view.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.contentEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var imageView: AnimationView = {
-        let view = AnimationView.init(name: lottieFileName)
-        view.loopMode = .loop
-        view.animationSpeed = 2
-        view.backgroundBehavior = .pauseAndRestore
-        view.contentMode = .scaleAspectFit
-        view.play()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    private var lottieView: AnimationView
     
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
-        view.font = .systemFont(ofSize: 18)
+        view.font = .systemFont(ofSize: 18, weight: .bold)
         view.text = popupTitle
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +85,6 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
     }()
     
     // MARK: - data
-    let lottieFileName: String!
     let popupTitle: String!
     let popupDescription: String!
     let leftActionTitle: String!
@@ -107,8 +95,16 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
     private var popupSize: CGSize!
     private let baseAlphaBackground: CGFloat = 0.5
     
-    public init(lottieFileName: String, title: String, description: String, leftActionTitle: String, rightActionTitle: String, leftAction: (() -> Void)?, rightAction: (() -> Void)?) {
-        self.lottieFileName = lottieFileName
+    public init(
+        lottie: AnimationView,
+        closeImage: UIImage? = nil,
+        title: String,
+        description: String,
+        leftActionTitle: String,
+        rightActionTitle: String,
+        leftAction: (() -> Void)?,
+        rightAction: (() -> Void)?) {
+        self.lottieView = lottie
         self.popupTitle = title
         self.popupDescription = description
         self.leftActionTitle = leftActionTitle
@@ -116,6 +112,9 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
         self.leftAction = leftAction
         self.rightAction = rightAction
         super.init(nibName: nil, bundle: nil)
+        if closeImage != nil {
+            closeButton.setImage(closeImage, for: .normal)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -134,7 +133,17 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
         animateShowPopup()
     }
     
+    private func setupViewAttribute() {
+        lottieView.loopMode = .loop
+        lottieView.animationSpeed = 2
+        lottieView.backgroundBehavior = .pauseAndRestore
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.play()
+        lottieView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     private func layoutViews() {
+        setupViewAttribute()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         view.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeButtonTapped))
@@ -142,7 +151,7 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
         view.addGestureRecognizer(tapGesture)
         view.addSubview(viewHolder)
         viewHolder.addSubview(closeButton)
-        viewHolder.addSubview(imageView)
+        viewHolder.addSubview(lottieView)
         viewHolder.addSubview(titleLabel)
         viewHolder.addSubview(descriptionLabel)
         viewHolder.addSubview(leftActionButton)
@@ -161,11 +170,11 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
             closeButton.widthAnchor.constraint(equalToConstant: 44),
             closeButton.heightAnchor.constraint(equalToConstant: 44),
             
-            imageView.topAnchor.constraint(equalTo: closeButton.bottomAnchor),
-            imageView.centerXAnchor.constraint(equalTo: viewHolder.centerXAnchor),
-            imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+            lottieView.topAnchor.constraint(equalTo: closeButton.bottomAnchor),
+            lottieView.centerXAnchor.constraint(equalTo: viewHolder.centerXAnchor),
+            lottieView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
             
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 44),
+            titleLabel.topAnchor.constraint(equalTo: lottieView.bottomAnchor, constant: 44),
             titleLabel.leadingAnchor.constraint(equalTo: viewHolder.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: viewHolder.trailingAnchor, constant: -20),
             
@@ -272,3 +281,4 @@ public class BottomSheetVC: UIViewController, UIGestureRecognizerDelegate {
         return touch.view == gestureRecognizer.view
     }
 }
+
