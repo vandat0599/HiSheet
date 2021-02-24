@@ -21,7 +21,7 @@ pod 'HiSheet'
 ```
 
 ## Demo
-![Alt text]("https://media.giphy.com/media/3o85xAuO9kQ9c4mBFK/giphy.gif")
+![Demo](https://github.com/vandat0599/HiSheet/blob/master/Resource/sample.gif)
 
 ## Author
 
