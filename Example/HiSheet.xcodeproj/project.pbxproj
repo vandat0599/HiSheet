@@ -15,6 +15,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		B560D768AD04569EA8FA8B28 /* Pods_HiSheet_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153CB0206F4D69A54582A9E9 /* Pods_HiSheet_Example.framework */; };
+		CEBC3A8725E6D76C00D41F03 /* LottieSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC3A8625E6D76C00D41F03 /* LottieSheetViewController.swift */; };
+		CEBC3A9C25E6D87A00D41F03 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC3A9B25E6D87A00D41F03 /* UIView+.swift */; };
 		CEEA17222586B57D001ED595 /* lottie-internet-connection.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEA17212586B57D001ED595 /* lottie-internet-connection.json */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7F59454CF489E06E192338A6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		CEBC3A8625E6D76C00D41F03 /* LottieSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSheetViewController.swift; sourceTree = "<group>"; };
+		CEBC3A9B25E6D87A00D41F03 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		CEEA17212586B57D001ED595 /* lottie-internet-connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-internet-connection.json"; sourceTree = "<group>"; };
 		EE128283D1B405044D3C250E /* HiSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HiSheet.podspec; path = ../HiSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -106,13 +110,11 @@
 		607FACD21AFB9204008FA782 /* Example for HiSheet */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				CEEA17212586B57D001ED595 /* lottie-internet-connection.json */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				CEBC3AB825E6DD8C00D41F03 /* Resource */,
+				CEBC3AB625E6DD3800D41F03 /* Other */,
+				CEBC3AB525E6DD2600D41F03 /* Extension */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				CEBC3AB725E6DD6500D41F03 /* ViewController */,
 			);
 			name = "Example for HiSheet";
 			path = HiSheet;
@@ -151,6 +153,42 @@
 				7F59454CF489E06E192338A6 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		CEBC3AB525E6DD2600D41F03 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC3A9B25E6D87A00D41F03 /* UIView+.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		CEBC3AB625E6DD3800D41F03 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		CEBC3AB725E6DD6500D41F03 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC3A8625E6D76C00D41F03 /* LottieSheetViewController.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		CEBC3AB825E6DD8C00D41F03 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				CEEA17212586B57D001ED595 /* lottie-internet-connection.json */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		EFDF73D917B16DA7EBB3D32E /* Frameworks */ = {
@@ -215,6 +253,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7859BCHX87;
 						LastSwiftMigration = 1170;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -337,7 +376,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBC3A9C25E6D87A00D41F03 /* UIView+.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				CEBC3A8725E6D76C00D41F03 /* LottieSheetViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +531,7 @@
 			baseConfigurationReference = 1EABC64AFF872A01F589C90F /* Pods-HiSheet_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7859BCHX87;
 				INFOPLIST_FILE = HiSheet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -505,6 +547,7 @@
 			baseConfigurationReference = 4407582CBFB9E2FAB07AAFBF /* Pods-HiSheet_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7859BCHX87;
 				INFOPLIST_FILE = HiSheet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

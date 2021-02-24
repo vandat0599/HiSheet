@@ -1,10 +1,10 @@
 PODS:
-  - HiSheet (0.1.0):
-    - lottie-ios
+  - HiSheet (1.0.0)
   - lottie-ios (3.1.9)
 
 DEPENDENCIES:
   - HiSheet (from `../`)
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HiSheet: 26396378b8770ed77466840f4a3fafc37bd8bb98
+  HiSheet: 4e1d23caa011b3bcace9a8520c15cb02b49bfeef
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
 
-PODFILE CHECKSUM: 262893d9b2a274a3084ac3d783a28b4876eb4192
+PODFILE CHECKSUM: 51597c98af2ec4f0984bd0762b8463c26a391580
 
 COCOAPODS: 1.10.0

@@ -1,9 +1,9 @@
 //
-//  UIView.swift
-//  SlideMenuControllerSwift
+//  UIView+.swift
+//  HiSheet_Example
 //
-//  Created by Yuji Hato on 11/5/15.
-//  Copyright © 2015 Yuji Hato. All rights reserved.
+//  Created by Dat Van on 2/25/21.
+//  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
 import UIKit
@@ -109,5 +109,4 @@ extension UIView {
         }
     }
 }
-
 

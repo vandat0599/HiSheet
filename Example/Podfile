@@ -4,9 +4,8 @@ platform :ios, '11.0'
 
 target 'HiSheet_Example' do
   pod 'HiSheet', :path => '../'
+  pod 'lottie-ios'
   target 'HiSheet_Tests' do
     inherit! :search_paths
-
-    
   end
 end
