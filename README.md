@@ -20,6 +20,9 @@ it, simply add the following line to your Podfile:
 pod 'HiSheet'
 ```
 
+## Demo
+![Alt text]("https://media.giphy.com/media/3o85xAuO9kQ9c4mBFK/giphy.gif")
+
 ## Author
 
 vandat0599@gmail.com, vandat0599@gmail.com
