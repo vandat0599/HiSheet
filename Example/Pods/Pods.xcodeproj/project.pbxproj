@@ -121,7 +121,7 @@
 		C960309E8DBD13A20BC26B2842463D62 /* StrokeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA13C0ADEEF12AB14B717FFD98D08E7 /* StrokeNode.swift */; };
 		C9E9AB1A4B11F4EFF49986DD6BA05AC1 /* Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80946558B6C14EE22EEDEB18CFAA6C /* Vectors.swift */; };
 		CB8A7BE8F63886EE30FBCAF2F3968764 /* LayerTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B80D060BB6998E0360153AFC0082B3 /* LayerTextProvider.swift */; };
-		CEBC3AE125E6E3EB00D41F03 /* sample.gif in Resources */ = {isa = PBXBuildFile; fileRef = CEBC3AE025E6E3EB00D41F03 /* sample.gif */; };
+		CEBC3AED25E6E4CC00D41F03 /* sample.gif in Resources */ = {isa = PBXBuildFile; fileRef = CEBC3AEC25E6E4CC00D41F03 /* sample.gif */; };
 		CF779993E4FEEE72B1B59F71160BF7BA /* AnimatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F74877F3EC4047D1376FB1F1BA6D67 /* AnimatorNode.swift */; };
 		D3BB7C10CF7FB03081B7ACF2B95313D4 /* FilepathImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F342191FDD5F6F6CA2F736B0BFA8A6 /* FilepathImageProvider.swift */; };
 		D482B07B389D6BED35B449680862FD5F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED5697EFA62FFCA826B10F2060CCAB3 /* Animation.swift */; };
@@ -334,7 +334,7 @@
 		C91B15A29F0E6DD549FD355CC14138A4 /* TrimPathNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrimPathNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/ModifierNodes/TrimPathNode.swift"; sourceTree = "<group>"; };
 		CA24225CBD0B33C15C0858E4039A1616 /* HiSheet.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = HiSheet.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CDC5B47C379F7FD6F0732EA809A49EB7 /* LayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerModel.swift; path = "lottie-swift/src/Private/Model/Layers/LayerModel.swift"; sourceTree = "<group>"; };
-		CEBC3AE025E6E3EB00D41F03 /* sample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sample.gif; sourceTree = "<group>"; };
+		CEBC3AEC25E6E4CC00D41F03 /* sample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sample.gif; sourceTree = "<group>"; };
 		D03759F2E6C2148B126D29F3A1E25074 /* Star.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Star.swift; path = "lottie-swift/src/Private/Model/ShapeItems/Star.swift"; sourceTree = "<group>"; };
 		D07DED6D170124265C0B7406B045F207 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		D55CE7D9F193AFF0C940DCCA35FEC282 /* Pods-HiSheet_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HiSheet_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -671,7 +671,7 @@
 		CEBC3AB925E6E04300D41F03 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				CEBC3AE025E6E3EB00D41F03 /* sample.gif */,
+				CEBC3AEC25E6E4CC00D41F03 /* sample.gif */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -911,7 +911,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBC3AE125E6E3EB00D41F03 /* sample.gif in Resources */,
+				CEBC3AED25E6E4CC00D41F03 /* sample.gif in Resources */,
 				FB1C7EEF5AD5EEFC835A8264B0EEEF79 /* HiSheet.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,7 +21,7 @@ pod 'HiSheet'
 ```
 
 ## Demo
-<img src="https://github.com/vandat0599/HiSheet/blob/master/Resource/sample.gif" width="158" height="320"/>
+<img src="https://github.com/vandat0599/HiSheet/blob/master/Resource/sample.gif" width="320" height="649"/>
 
 ## Author
 
