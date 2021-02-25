@@ -13,6 +13,7 @@ open class BottomSheetViewController: UIViewController, UIGestureRecognizerDeleg
         let view = UIControl()
         view.backgroundColor = .white
         view.layer.masksToBounds = true
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         view.layer.cornerRadius = 15
         view.isUserInteractionEnabled = true
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction(sender:)))
