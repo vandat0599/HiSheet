@@ -106,27 +106,28 @@ open class BottomSheetViewController: UIViewController, UIGestureRecognizerDeleg
     
     @objc private func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
-        // Not allowing the user to drag the view upward
-        guard translation.y >= 0 else { return }
-        // setting x as 0 because we don't want users to move the frame side ways!! Only want straight up or down
+        guard translation.y >= 0 else {
+            self.animateShowPopup()
+            return
+        }
         contentViewBottomConstraint.constant = translation.y
         contentView.layoutIfNeeded()
         let percentDismiss = translation.y/contentViewSize.height
         view.backgroundColor = UIColor.black.withAlphaComponent(baseAlphaBackground*(1-percentDismiss))
         if sender.state == .ended {
-            let dragVelocity = sender.velocity(in: view)
-            if dragVelocity.y >= 1300 {
-                animateHidePopup(withDuration: 0.1, completion: nil)
-            } else {
-                if percentDismiss > 0.6 {
+            if canDismissOnSwipeDown {
+                let dragVelocity = sender.velocity(in: view)
+                if dragVelocity.y >= 1300 {
                     animateHidePopup(withDuration: 0.1, completion: nil)
                 } else {
-                    contentViewBottomConstraint.constant = 0
-                    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [], animations: {
-                        self.view.backgroundColor = UIColor.black.withAlphaComponent(self.baseAlphaBackground)
-                        self.view.layoutIfNeeded()
-                    }, completion: nil)
+                    if percentDismiss > 0.6 {
+                        animateHidePopup(withDuration: 0.1, completion: nil)
+                    } else {
+                        self.animateShowPopup()
+                    }
                 }
+            } else {
+                self.animateShowPopup()
             }
         }
     }
